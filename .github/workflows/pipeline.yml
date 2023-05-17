@@ -36,7 +36,7 @@ jobs:
     - name: Build & push Docker image
       with:
        image: kauem/catraca
-       tags: v1, latest
+       tags: latest
        registry: docker.io
        dockerfile: dockerfile
        username: ${{ secrets.DOCKER_USERNAME }}
