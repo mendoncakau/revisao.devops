@@ -29,11 +29,15 @@ jobs:
         run: |
           cd src
           java -cp . Teste
+          
+      - name: Gerando Versão
+        run: echo ${{ github.run_number}}
+        
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: kauem/catraca
-          tags: latest
+          tags: latest, ${{ github.run_number}}
           registry: docker.io
           dockerfile: dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
