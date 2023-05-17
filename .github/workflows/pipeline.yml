@@ -37,7 +37,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: kauem/catraca
-          tags: QA-v1.:${{ github.run_number}}
+          tags: QA-v1.${{ github.run_number}}
           registry: docker.io
           dockerfile: dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
